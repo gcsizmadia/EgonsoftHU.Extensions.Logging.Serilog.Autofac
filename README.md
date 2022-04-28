@@ -4,7 +4,7 @@
 [![Nuget](https://img.shields.io/nuget/v/EgonsoftHU.Extensions.Logging.Serilog.Autofac?label=NuGet)](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac)
 [![Nuget](https://img.shields.io/nuget/dt/EgonsoftHU.Extensions.Logging.Serilog.Autofac?label=Downloads)](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac)
 
-A dependency module (derived from Autofac.Module) that enables injecting a contextual logger (`Serilog.ILogger`) using `Log.Logger.ForContext<T>()`.
+A dependency module (derived from Autofac.Module) that enables injecting a contextual `Serilog` logger so that you can avoid calling `Log.Logger.ForContext<T>()` manually.
 
 ## Table of Contents
 - [Introduction](#introduction)
