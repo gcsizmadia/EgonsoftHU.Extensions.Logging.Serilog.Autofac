@@ -1,4 +1,4 @@
-# Egonsoft.HU Logging Extensions for Autofac
+# Egonsoft.HU Serilog Logging Extensions for Autofac
 
 [![GitHub](https://img.shields.io/github/license/gcsizmadia/EgonsoftHU.Extensions.Logging.Serilog.Autofac?label=License)](https://opensource.org/licenses/MIT)
 [![Nuget](https://img.shields.io/nuget/v/EgonsoftHU.Extensions.Logging.Serilog.Autofac?label=NuGet)](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac)
@@ -32,7 +32,7 @@ public class MyService
 }
 ```
 
-We can simply inject the `ILogger` interface type and still get the same contextual logger instance:
+We can simply inject the `ILogger` interface type and still get the same contextual Serilog logger instance:
 ```C#
 using Microsoft.Extensions.Logging;
 
