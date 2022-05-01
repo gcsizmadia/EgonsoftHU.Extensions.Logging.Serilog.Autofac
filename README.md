@@ -7,6 +7,7 @@
 A dependency module (derived from Autofac.Module) that enables injecting a contextual `Serilog` logger so that you can avoid calling `Log.Logger.ForContext<T>()` manually.
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Releases](#releases)
 - [Summary](#summary)
