@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>EgonsoftHU.Extensions.Logging.Serilog.Autofac</PackageId>
+    <VersionPrefix>4.0.0</VersionPrefix>
+    <VersionSuffix></VersionSuffix>
+    <Authors>Gabor Csizmadia</Authors>
+    <Owners>Egonsoft.HU</Owners>
+    <Title>Egonsoft.HU Serilog Logging Extensions for Autofac</Title>
+    <Description>A dependency module (derived from Autofac.Module) that enables injecting a contextual Serilog logger so that you can avoid calling Log.Logger.ForContext&lt;T&gt;() manually.</Description>
+    <Summary>A dependency module (derived from Autofac.Module) that enables injecting a contextual Serilog logger so that you can avoid calling Log.Logger.ForContext&lt;T&gt;() manually.</Summary>
+    <Copyright>Copyright © 2022 Gabor Csizmadia</Copyright>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/gcsizmadia/EgonsoftHU.Extensions.Logging.Serilog.Autofac</PackageProjectUrl>
+    <!--
+    <PackageIcon></PackageIcon>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageReadmeFile></PackageReadmeFile>
+    -->
+    <PackageTags>$(PackageTags) extensions extension logging serilog ilogger dependencyinjection di ioc autofac module</PackageTags>
+    <PackageReleaseNotes>Please visit https://github.com/gcsizmadia/EgonsoftHU.Extensions.Logging.Serilog.Autofac/releases to view the release notes.</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/gcsizmadia/EgonsoftHU.Extensions.Logging.Serilog.Autofac.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <!--
+    <RepositoryBranch></RepositoryBranch>
+    <RepositoryCommit></RepositoryCommit>
+    -->
+    <PackageType>Dependency</PackageType>
+    <DevelopmentDependency>false</DevelopmentDependency>
+    <MinClientVersion>4.1.0</MinClientVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.4" />
+    <PackageReference Include="EgonsoftHU.Extensions.Bcl" Version="1.0.2" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+  </ItemGroup>
+</Project>
