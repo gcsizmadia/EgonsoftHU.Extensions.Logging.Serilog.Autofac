@@ -1,17 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net461;netcoreapp3.1;net6.0</TargetFrameworks>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>EgonsoftHU.Extensions.Logging.Serilog.Autofac</PackageId>
-    <VersionPrefix>6.0.0</VersionPrefix>
+    <VersionPrefix>6.0.1</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Authors>Gabor Csizmadia</Authors>
     <Owners>Egonsoft.HU</Owners>
     <Title>Egonsoft.HU Serilog Logging Extensions for Autofac</Title>
     <Description>A dependency module (derived from Autofac.Module) that enables injecting a contextual Serilog logger so that you can avoid calling Log.Logger.ForContext&lt;T&gt;() manually.</Description>
     <Summary>A dependency module (derived from Autofac.Module) that enables injecting a contextual Serilog logger so that you can avoid calling Log.Logger.ForContext&lt;T&gt;() manually.</Summary>
-    <Copyright>Copyright © 2022 Gabor Csizmadia</Copyright>
+    <!--
+    <Copyright></Copyright>
+    -->
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/gcsizmadia/EgonsoftHU.Extensions.Logging.Serilog.Autofac</PackageProjectUrl>
@@ -33,8 +35,7 @@
     <MinClientVersion>4.1.0</MinClientVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="6.3.0" />
-    <PackageReference Include="EgonsoftHU.Extensions.Bcl" Version="1.0.2" />
-    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Autofac" Version="6.4.0" />
+    <PackageReference Include="Serilog" Version="2.11.0" />
   </ItemGroup>
 </Project>

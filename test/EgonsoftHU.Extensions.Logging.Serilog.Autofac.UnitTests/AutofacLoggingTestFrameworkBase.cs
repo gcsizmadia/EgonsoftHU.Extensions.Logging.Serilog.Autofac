@@ -18,11 +18,14 @@ namespace EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests
         where T : AutofacLoggingTestFrameworkBase<T>
     {
         private readonly LoggingFixture<T> fixture;
+        private readonly IMessageSink diagnosticMessageSink;
 
         protected AutofacLoggingTestFrameworkBase(IMessageSink diagnosticMessageSink)
             : base(diagnosticMessageSink)
         {
-            fixture = new LoggingFixture<T>();
+            this.diagnosticMessageSink = diagnosticMessageSink;
+
+            fixture = new();
             fixture.InitializeLogger(diagnosticMessageSink);
 
             DisposalTracker.Add(fixture);
@@ -30,7 +33,7 @@ namespace EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests
             Logger.Here().Verbose("TestFramework created");
         }
 
-        protected ILogger Logger => fixture.Logger;
+        protected ILogger Logger => fixture.Logger ?? fixture.InitializeLogger(diagnosticMessageSink);
 
         protected override void ConfigureContainer(ContainerBuilder builder)
         {

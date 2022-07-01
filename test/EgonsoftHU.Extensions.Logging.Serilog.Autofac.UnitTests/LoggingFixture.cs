@@ -2,6 +2,7 @@
 // This code is licensed under MIT license (see LICENSE for details)
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Text;
 
@@ -20,18 +21,22 @@ namespace EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests
         private const string OutputTemplate =
             "{Timestamp:yyyy-MM-dd HH:mm:ss.fffffff zzz} [{Level:u3}] {Message:lj} ==> {Properties}{NewLine}{Exception}";
 
-        private static readonly CompactJsonFormatter formatter = new CompactJsonFormatter();
+        private static readonly CompactJsonFormatter formatter = new();
 
-        public ILogger Logger { get; private set; }
+        public ILogger? Logger { get; private set; }
 
-        public void InitializeLogger(ITestOutputHelper output)
+        [MemberNotNull(nameof(Logger))]
+        public ILogger InitializeLogger(ITestOutputHelper output)
         {
             Logger = CreateLogger(output);
+            return Logger;
         }
 
-        public void InitializeLogger(IMessageSink output)
+        [MemberNotNull(nameof(Logger))]
+        public ILogger InitializeLogger(IMessageSink output)
         {
             Logger = CreateLogger(output);
+            return Logger;
         }
 
         private static ILogger CreateLogger(object output)

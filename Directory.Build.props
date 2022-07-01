@@ -1,0 +1,41 @@
+﻿<!--
+Copyright © 2022 Gabor Csizmadia
+This code is licensed under MIT license (see LICENSE for details)
+-->
+<Project>
+
+  <!-- Support for dotnet CLI commands -->
+  <PropertyGroup>
+    <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RootNamespace>EgonsoftHU.Extensions.Logging.Serilog.Autofac</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>Egonsoft.HU Serilog Logging Extensions for Autofac</Product>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <EgonsoftHUCommonPropsFile>$(MSBuildThisFileDirectory)..\..\build\EgonsoftHU.Common.props</EgonsoftHUCommonPropsFile>
+  </PropertyGroup>
+
+  <Import Project="$(EgonsoftHUCommonPropsFile)" Condition="Exists('$(EgonsoftHUCommonPropsFile)')" />
+
+  <PropertyGroup Condition="'$(ProjectFolder)' == 'src'">
+    <ApplicationManifest>$(SolutionDir)src\$(MSBuildProjectName)\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(ProjectFolder)' == 'test'">
+    <Title>$(MSBuildProjectName)</Title>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(ProjectFolder)' == 'test' And '$(MSBuildProjectName)' != 'EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests'">
+    <AssemblyAttribute Include="Xunit.TestFrameworkAttribute">
+      <_Parameter1>EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests.AutofacLoggingTestFramework</_Parameter1>
+      <_Parameter2>$(MSBuildProjectName)</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+</Project>

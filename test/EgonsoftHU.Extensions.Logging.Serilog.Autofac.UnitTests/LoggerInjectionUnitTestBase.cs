@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 using Autofac;
 using Autofac.Core.Registration;
@@ -35,7 +36,7 @@ namespace EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests
             TestService service = Scope.Resolve<TestService>();
 
             int expectedCount = 2;
-            string expectedValue = typeof(TestService).FullName;
+            string expectedValue = typeof(TestService).GetTypeInfo().FullName!;
 
             // Act
             service.LoggerInjected.Information(String.Empty);

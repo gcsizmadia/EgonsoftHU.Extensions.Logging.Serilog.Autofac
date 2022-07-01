@@ -6,39 +6,37 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00_Build", "00_Build", "{8813750B-144A-453F-8453-A259E3CB504E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		app.manifest = app.manifest
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
-		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00_Documents", "00_Documents", "{6AEF3253-0A90-46F3-83AC-BAA8056B92D7}"
 	ProjectSection(SolutionItems) = preProject
-		..\LICENSE = ..\LICENSE
-		..\README.md = ..\README.md
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Common", "01_Common", "{620ADE14-B5E1-4E93-8AC1-BDF67CA7493A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests", "EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests\EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests.csproj", "{DBF81426-9FD3-4578-B744-3543983B3E9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests", "test\EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests\EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests.csproj", "{DBF81426-9FD3-4578-B744-3543983B3E9A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_Autofac_v4_9_4", "02_Autofac_v4_9_4", "{B8090403-53F5-4B19-98EC-C646B580B670}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV4", "EgonsoftHU.Extensions.Logging.Serilog.AutofacV4\EgonsoftHU.Extensions.Logging.Serilog.AutofacV4.csproj", "{AEA20726-B922-4503-A1B8-6581641E5B7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV4", "src\EgonsoftHU.Extensions.Logging.Serilog.AutofacV4\EgonsoftHU.Extensions.Logging.Serilog.AutofacV4.csproj", "{AEA20726-B922-4503-A1B8-6581641E5B7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV4.UnitTests", "EgonsoftHU.Extensions.Logging.Serilog.AutofacV4.UnitTests\EgonsoftHU.Extensions.Logging.Serilog.AutofacV4.UnitTests.csproj", "{206107AA-9717-4596-A0FD-A2AB20CFA4F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV4.UnitTests", "test\EgonsoftHU.Extensions.Logging.Serilog.AutofacV4.UnitTests\EgonsoftHU.Extensions.Logging.Serilog.AutofacV4.UnitTests.csproj", "{206107AA-9717-4596-A0FD-A2AB20CFA4F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_Autofac_v5_2_0", "02_Autofac_v5_2_0", "{656EFB69-0501-485F-BF50-981DBF0F0464}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV5", "EgonsoftHU.Extensions.Logging.Serilog.AutofacV5\EgonsoftHU.Extensions.Logging.Serilog.AutofacV5.csproj", "{F5CEE72F-53ED-44EE-8538-87F52C197DCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV5", "src\EgonsoftHU.Extensions.Logging.Serilog.AutofacV5\EgonsoftHU.Extensions.Logging.Serilog.AutofacV5.csproj", "{F5CEE72F-53ED-44EE-8538-87F52C197DCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV5.UnitTests", "EgonsoftHU.Extensions.Logging.Serilog.AutofacV5.UnitTests\EgonsoftHU.Extensions.Logging.Serilog.AutofacV5.UnitTests.csproj", "{ED50DCC9-FACC-46A5-97E0-ED52FFFF2A06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV5.UnitTests", "test\EgonsoftHU.Extensions.Logging.Serilog.AutofacV5.UnitTests\EgonsoftHU.Extensions.Logging.Serilog.AutofacV5.UnitTests.csproj", "{ED50DCC9-FACC-46A5-97E0-ED52FFFF2A06}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_Autofac_v6_3_0", "02_Autofac_v6_3_0", "{DB968A49-18EF-46B2-8AE5-FD8705BF331B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV6", "EgonsoftHU.Extensions.Logging.Serilog.AutofacV6\EgonsoftHU.Extensions.Logging.Serilog.AutofacV6.csproj", "{601F4C19-FC10-4AAE-A974-E90820109901}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV6", "src\EgonsoftHU.Extensions.Logging.Serilog.AutofacV6\EgonsoftHU.Extensions.Logging.Serilog.AutofacV6.csproj", "{601F4C19-FC10-4AAE-A974-E90820109901}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV6.UnitTests", "EgonsoftHU.Extensions.Logging.Serilog.AutofacV6.UnitTests\EgonsoftHU.Extensions.Logging.Serilog.AutofacV6.UnitTests.csproj", "{41A4D547-3AF0-416F-8B73-DCBAA1F6B8DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgonsoftHU.Extensions.Logging.Serilog.AutofacV6.UnitTests", "test\EgonsoftHU.Extensions.Logging.Serilog.AutofacV6.UnitTests\EgonsoftHU.Extensions.Logging.Serilog.AutofacV6.UnitTests.csproj", "{41A4D547-3AF0-416F-8B73-DCBAA1F6B8DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
