@@ -35,7 +35,7 @@ public class MyService
 
 We can simply inject the `ILogger` interface type and still get the same contextual Serilog logger instance:
 ```C#
-using Microsoft.Extensions.Logging;
+using Serilog;
 
 public class MyService
 {
@@ -51,17 +51,18 @@ public class MyService
 ## Releases
 
 You can download the package from [nuget.org](https://www.nuget.org/).
-- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 4.0.0](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/4.0.0)
-- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 5.0.0](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/5.0.0)
-- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 6.0.0](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/6.0.0)
+- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 4.0.1](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/4.0.1)
+- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 5.0.1](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/5.0.1)
+- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 6.0.1](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/6.0.1)
 
 **Please note:** Each package version reflects the major version of the referenced Autofac nuget package as below.
 
 |EgonsoftHU.Extensions.Logging.Serilog.Autofac|Autofac|
 |:-:|:-:|
-|4.0.0|4.9.4|
-|5.0.0|5.2.0|
+|4.0.0 - 4.0.1|4.9.4|
+|5.0.0 - 5.0.1|5.2.0|
 |6.0.0|6.3.0|
+|6.0.1|6.4.0|
 
 You can find the release notes [here](https://github.com/gcsizmadia/EgonsoftHU.Extensions.Logging.Serilog.Autofac/releases).
 
@@ -71,18 +72,18 @@ These packages use Autofac features so that you can use the `ILogger` interface 
 
 ## Instructions
 
-***First***, determine which version of the Autofac nuget package you use. If you do not use it yet then I suggest using the latest (as of writing 6.3.0) version.
+***First***, determine which version of the Autofac nuget package you use. If you do not use it yet then I suggest using the latest (as of writing 6.4.0) version.
 
 ***Next***, install the latest version of the matching major version of the *EgonsoftHU.Extensions.Logging.Serilog.Autofac* [NuGet package](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac).
 
 .NET CLI:
 ```
-dotnet add package EgonsoftHU.Extensions.Logging.Serilog.Autofac --version 6.0.0
+dotnet add package EgonsoftHU.Extensions.Logging.Serilog.Autofac --version 6.0.1
 ```
 
 Package Manager:
 ```pwsh
-Install-Package EgonsoftHU.Extensions.Logging.Serilog.Autofac -Version 6.0.0
+Install-Package EgonsoftHU.Extensions.Logging.Serilog.Autofac -Version 6.0.1
 ```
 
 ***Next***, add `ConfigureContainer<ContainerBuilder>()` to the Generic Host in `CreateHostBuilder()`.
