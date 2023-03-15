@@ -3,11 +3,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
-using Autofac;
 using Autofac.Core;
+using Autofac.Features.AttributeFilters;
 
 using Serilog;
+
+using Module = Autofac.Module;
 
 namespace EgonsoftHU.Extensions.Logging.Serilog.Autofac
 {
@@ -19,7 +22,7 @@ namespace EgonsoftHU.Extensions.Logging.Serilog.Autofac
     {
         private static readonly ResolvedParameter loggerParameter =
             new(
-                (parameter, context) => typeof(ILogger) == parameter.ParameterType,
+                (parameter, context) => typeof(ILogger) == parameter.ParameterType && parameter.GetCustomAttribute<KeyFilterAttribute>() is null,
                 (parameter, context) => Log.Logger.ForContext(parameter.Member.DeclaringType ?? typeof(object))
             );
 

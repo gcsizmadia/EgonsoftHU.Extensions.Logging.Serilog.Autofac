@@ -2,6 +2,7 @@
 // This code is licensed under MIT license (see LICENSE for details)
 
 using Autofac;
+using Autofac.Features.AttributeFilters;
 
 using Xunit.Frameworks.Autofac;
 
@@ -14,7 +15,8 @@ namespace EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests
             builder
                 .RegisterType<TestService>()
                 .AsSelf()
-                .InstancePerTest();
+                .InstancePerTest()
+                .WithAttributeFiltering();
         }
     }
 }

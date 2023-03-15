@@ -50,6 +50,21 @@ namespace EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests
         }
 
         [Fact]
+        public void ShouldNotResolveIfKeyFilterAttributeApplied()
+        {
+            Logger.Here().Verbose("Running test");
+
+            // Arrange
+            TestService service = Scope.Resolve<TestService>();
+
+            // Act
+            ILogger? sut = service.KeyedLogger;
+
+            // Assert
+            sut.Should().BeNull();
+        }
+
+        [Fact]
         public void ResolveILoggerDirectlyShouldFail()
         {
             Logger.Here().Verbose("Running test");
