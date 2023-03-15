@@ -11,6 +11,7 @@ A dependency module (derived from Autofac.Module) that enables injecting a conte
 - [Introduction](#introduction)
 - [Releases](#releases)
 - [Summary](#summary)
+  - [Attribute filtering](#attribute-filtering)
 - [Instructions](#instructions)
   - [Usage option #1 - Register the module explicitly](#usage-option-1---register-the-module-explicitly)
   - [Usage option #2 - Register the module implicitly by using `EgonsoftHU.Extensions.DependencyInjection.Autofac` nuget package](#usage-option-2---register-the-module-implicitly-by-using-egonsofthuextensionsdependencyinjectionautofac-nuget-package)
@@ -51,24 +52,51 @@ public class MyService
 ## Releases
 
 You can download the package from [nuget.org](https://www.nuget.org/).
-- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 4.0.1](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/4.0.1)
-- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 5.0.1](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/5.0.1)
-- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 6.0.1](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/6.0.1)
+- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 4.1.0](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/4.1.0)
+- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 5.1.0](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/5.1.0)
+- [EgonsoftHU.Extensions.Logging.Serilog.Autofac 6.1.0](https://www.nuget.org/packages/EgonsoftHU.Extensions.Logging.Serilog.Autofac/6.1.0)
 
 **Please note:** Each package version reflects the major version of the referenced Autofac nuget package as below.
 
 |EgonsoftHU.Extensions.Logging.Serilog.Autofac|Autofac|
 |:-:|:-:|
-|4.0.0 - 4.0.1|4.9.4|
-|5.0.0 - 5.0.1|5.2.0|
+|4.0.0 - 4.1.0|4.9.4|
+|5.0.0 - 5.1.0|5.2.0|
 |6.0.0|6.3.0|
-|6.0.1|6.4.0|
+|6.0.1 - 6.1.0|6.4.0|
 
 You can find the release notes [here](https://github.com/gcsizmadia/EgonsoftHU.Extensions.Logging.Serilog.Autofac/releases).
 
 ## Summary
 
 These packages use Autofac features so that you can use the `ILogger` interface type for injection instead of manually initializing the private field by calling `Log.Logger.ForContext<TCategoryName>()`.
+
+### Attribute filtering
+
+If you apply `KeyFilterAttribute` to your constructor's `ILogger` parameter then you have to register an instance of `ILogger` as a keyed service.
+
+```C#
+using Autofac.Features.AttributeFilters;
+
+using Serilog;
+
+public class MyService
+{
+    private readonly ILogger logger;
+    private readonly ILogger keyedLogger;
+
+    public MyService(ILogger logger, [KeyFilter("Custom")] ILogger logger)
+    {
+        // This will be resolved by this Autofac module.
+        this.logger = logger;
+
+        // This will NOT be resolved by this Autofac module.
+        // You have to register an instance of ILogger as a keyed service.
+        // Do not forget to call WithAttributeFiltering() when registering MyService type.
+        this.keyedLogger = keyedLogger;
+    }
+}
+```
 
 ## Instructions
 
