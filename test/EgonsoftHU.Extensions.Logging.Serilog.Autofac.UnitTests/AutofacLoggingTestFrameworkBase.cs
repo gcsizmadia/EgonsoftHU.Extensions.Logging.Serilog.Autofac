@@ -3,7 +3,7 @@
 
 using Autofac;
 
-using EgonsoftHU.Extensions.DependencyInjection.Autofac;
+using EgonsoftHU.Extensions.DependencyInjection;
 
 using Serilog;
 
@@ -38,7 +38,7 @@ namespace EgonsoftHU.Extensions.Logging.Serilog.Autofac.UnitTests
         protected override void ConfigureContainer(ContainerBuilder builder)
         {
             builder.UseDefaultAssemblyRegistry(nameof(EgonsoftHU));
-            builder.RegisterModule<DependencyInjection.Autofac.DependencyModule>();
+            builder.RegisterModule<DependencyInjection.DependencyModule>();
         }
     }
 }
